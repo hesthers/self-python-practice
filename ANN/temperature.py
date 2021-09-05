@@ -36,4 +36,7 @@ model = Sequential([
     Dense(1)])
 
 model.compile(optimizer = 'adam', loss ='mse', metrics = 'acc')
-history = model.fit(x_train, y_train, epochs = 200, verbose = 0, validation_data = (x_val, y_val)) 
+history = model.fit(x_train, y_train, epochs = 200, verbose = 0, validation_data = (x_val, y_val))
+
+# model evaluation
+model.evaluate(x_test, y_test)
