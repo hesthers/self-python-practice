@@ -24,3 +24,16 @@ x_test = (x_test - mean) / std
 
 x_train, x_val, y_train, y_val = train_test_split(x_train, y_train, test_size = 0.2, random_state = 1000)
 
+# data training
+
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+
+model = Sequential([
+    Dense(64, activation = 'relu', input_shape = (2,)),
+    Dense(32, activation = 'relu'),
+    Dense(10,activation = 'relu'),
+    Dense(1)])
+
+model.compile(optimizer = 'adam', loss ='mse', metrics = 'acc')
+history = model.fit(x_train, y_train, epochs = 200, verbose = 0, validation_data = (x_val, y_val)) 
