@@ -27,3 +27,20 @@ for n, m in zip(index, num_list):
         break
 
 print(f'랜덤 숫자: {ran_num}')
+
+cnt = 0
+l_num = []
+while True:
+    cnt += 1
+
+    game_num = input('숫자 3개를 입력하세요(띄어쓰기로 구분) : ')
+
+    try:
+        if ' ' in game_num:
+            game_num = game_num.split(' ')
+            for i in game_num:
+                l_num.append(int(i))
+        else:
+            game_num = input('띄어쓰기와 함께 숫자를 다시 입력하세요 : ')
+    except:
+        game_num = input('숫자를 다시 입력하세요 : ')
