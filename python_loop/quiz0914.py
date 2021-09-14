@@ -44,3 +44,19 @@ while True:
             game_num = input('띄어쓰기와 함께 숫자를 다시 입력하세요 : ')
     except:
         game_num = input('숫자를 다시 입력하세요 : ')
+
+    s_list = []
+    b_list = []
+    for n1, n2 in zip(ran_num, l_num):
+        if (int(n1) != int(n2)) & (int(n1) not in l_num):
+            print('OUT')
+        else:
+            strike = (int(n1) == int(n2)) & (int(n1) in l_num)
+            ball = (int(n1) != int(n2)) & (int(n1) in l_num)
+            s_list.append(ran_num[strike])
+            b_list.append(ran_num[ball])
+        print(f'{len(s_list)}S {len(b_list)}B')
+               
+    if len(s_list) == 3:
+        print(f'입력횟수 : {cnt}')
+        break
