@@ -63,3 +63,13 @@ print(r_square)
 
 print("기울기 a", lr.coef_)
 print("y 절편 b", lr.intercept_)
+
+### Test the model learning
+y_pred = lr.predict(x)  
+
+plt.figure(figsize=(10,5))
+ax1 = sns.kdeplot(y, label='Y')   
+ax2 = sns.kdeplot(y_pred, label = 'y_pred', ax=ax1) 
+plt.legend()
+plt.show()
+
