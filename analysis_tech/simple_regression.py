@@ -44,3 +44,12 @@ sns.regplot(data = us_county_info, x= 'Unemployment', y = 'Income', ax=ax1)
 sns.regplot(data = us_county_info, x= 'Unemployment', y = 'IncomePerCap', ax=ax2)
 plt.xlim(range(0, 350000))
 plt.show()
+
+### Model learning - simple regression
+x = us_county_info[['IncomePerCap']]   
+y = us_county_info['Income']        
+
+from sklearn.model_selection import train_test_split
+x_train, x_test, y_train, y_test = train_test_split(x,y, test_size=0.4, random_state=100) 
+print('train data 개수:', len(x_train))
+print('test data 개수:', len(x_test))
