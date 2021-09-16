@@ -18,3 +18,7 @@ ax2 = fig.add_subplot(1,2,2)
 sns.regplot(data = us_county_info, x= 'TotalPop', y = 'Unemployment', ax=ax1)
 sns.regplot(data = us_county_info, x= 'Income', y = 'Employed', ax=ax2)
 plt.show()
+
+sns.pairplot(us_county_info[['TotalPop', 'Income', 'IncomePerCap', 'Unemployment', 'Employed']])
+
+
