@@ -57,3 +57,9 @@ print('test data 개수:', len(x_test))
 from sklearn.linear_model import LinearRegression
 lr = LinearRegression()
 lr.fit(x_train, y_train)
+
+r_square = lr.score(x_test, y_test) 
+print(r_square)      
+
+print("기울기 a", lr.coef_)
+print("y 절편 b", lr.intercept_)
