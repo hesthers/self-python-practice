@@ -26,3 +26,21 @@ us_county_info['Unemployment'] = round(us_county['Unemployment'] * us_county['To
 
 sns.pairplot(us_county_info[['TotalPop', 'Income', 'IncomePerCap', 'Unemployment', 'Employed']])
 
+### new regplots
+fig = plt.figure(figsize=(21,5))
+ax1 = fig.add_subplot(1,3,1)
+ax2 = fig.add_subplot(1,3,2)
+ax3 = fig.add_subplot(1,3,3)
+
+sns.regplot(data = us_county_info, x= 'TotalPop', y = 'Employed', ax=ax1)
+sns.regplot(data = us_county_info, x= 'IncomePerCap', y = 'Income', ax=ax2)
+sns.regplot(data = us_county_info, x= 'TotalPop', y = 'Unemployment', ax=ax3)
+plt.show()
+
+fig = plt.figure(figsize=(20,10))
+ax1 = fig.add_subplot(1,2,1)
+ax2 = fig.add_subplot(1,2,2)
+sns.regplot(data = us_county_info, x= 'Unemployment', y = 'Income', ax=ax1)
+sns.regplot(data = us_county_info, x= 'Unemployment', y = 'IncomePerCap', ax=ax2)
+plt.xlim(range(0, 350000))
+plt.show()
