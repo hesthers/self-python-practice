@@ -21,4 +21,8 @@ plt.show()
 
 sns.pairplot(us_county_info[['TotalPop', 'Income', 'IncomePerCap', 'Unemployment', 'Employed']])
 
+### 2nd data preprocessing 
+us_county_info['Unemployment'] = round(us_county['Unemployment'] * us_county['TotalPop']/100,0).astype('int')
+
+sns.pairplot(us_county_info[['TotalPop', 'Income', 'IncomePerCap', 'Unemployment', 'Employed']])
 
