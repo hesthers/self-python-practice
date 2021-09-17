@@ -14,3 +14,9 @@ pt = pd.pivot_table(chipotle,
                values = 'quantity', 
                aggfunc= np.sum,).sort_values(by ='quantity',ascending=False)
 
+total = np.sum(pt)
+np.random.randint(15)
+
+chipotle.copy().quantity/total * 100
+pt['support'] = pt['quantity'] / total.values * 100
+
