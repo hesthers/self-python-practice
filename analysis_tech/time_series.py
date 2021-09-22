@@ -29,3 +29,16 @@ forecast_data[['ds', 'yhat_lower', 'yhat_upper', 'yhat']].tail(15)
 
 fig1 = prophet.plot(forecast_data)
 fig2 = prophet.plot_components(forecast_data)
+
+y = tmp.y.values
+y_pred = forecast_data.yhat.values[:-15]
+print(y)
+print(y_pred)
+
+from sklearn.metrics import mean_squared_error, r2_score
+from math import sqrt
+
+r2 = r2_score(y, y_pred)
+r2
+rmse = sqrt(mean_squared_error(y, y_pred))
+rmse
