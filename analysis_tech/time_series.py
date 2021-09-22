@@ -92,4 +92,8 @@ plt.ylim((15, 30))
 plt.legend()
 plt.show()
 
-
+y15_df = pd.DataFrame(y_15)
+y15_df.set_index(date, inplace=True)
+y15_df.rename(columns={0:'real'}, inplace=True)
+y15_df['pred'] = y_pred
+y15_df['diff'] = np.abs(y15_df['pred']-y15_df['real'])
