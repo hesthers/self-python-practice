@@ -20,3 +20,9 @@ prophet = Prophet(growth = 'linear', seasonality_mode='multiplicative', yearly_s
                   changepoint_prior_scale=0.5)
 
 prophet.fit(tmp)
+
+future_data = prophet.make_future_dataframe(periods=15, freq='d')
+forecast_data = prophet.predict(future_data)
+forecast_data
+
+forecast_data[['ds', 'yhat_lower', 'yhat_upper', 'yhat']].tail(15)
