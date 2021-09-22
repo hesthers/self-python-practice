@@ -15,3 +15,8 @@ tmp.rename(columns = {'date':'ds', 'avg_temp': 'y'}, inplace=True)
 tmp = tmp[tmp.ds >= '2010-01-01']
 tmp.info()
 
+prophet = Prophet(growth = 'linear', seasonality_mode='multiplicative', yearly_seasonality=True,
+                  weekly_seasonality=True, daily_seasonality=True,
+                  changepoint_prior_scale=0.5)
+
+prophet.fit(tmp)
