@@ -26,3 +26,6 @@ forecast_data = prophet.predict(future_data)
 forecast_data
 
 forecast_data[['ds', 'yhat_lower', 'yhat_upper', 'yhat']].tail(15)
+
+fig1 = prophet.plot(forecast_data)
+fig2 = prophet.plot_components(forecast_data)
