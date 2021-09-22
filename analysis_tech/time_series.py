@@ -71,3 +71,25 @@ y_df.rename(columns={0:'real'}, inplace=True)
 y_df['pred'] = y_pred
 y_df['diff'] = np.abs(y_df['pred']-y_df['real'])
 y_df['diff']
+
+temp_seoul = pd.read_csv('./seoul 15.csv', index_col=None, header=None)
+
+temp_seoul.drop(labels=1, axis=1, inplace=True)
+temp_seoul.rename(columns={0:'date', 2:'avg_temp', 3:'low_temp', 4:'high_temp'}, inplace=True)
+
+tmp_15 = temp_seoul[['date', 'avg_temp']]
+tmp_15.rename(columns = {'date':'ds', 'avg_temp': 'y'}, inplace=True)
+
+y_15 = tmp_15.y.values
+y_pred = forecast_data.yhat.values[-15:]
+
+date = tmp_15.ds.values
+
+sns.lineplot(data = forecast_data[-15:], x= date, y= y_pred, label = 'predicted')
+sns.lineplot(data = tmp_15, x= date, y = y_15, label = 'real')
+plt.xticks(rotation = 75)
+plt.ylim((15, 30))
+plt.legend()
+plt.show()
+
+
