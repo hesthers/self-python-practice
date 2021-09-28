@@ -20,3 +20,19 @@ time.sleep(3)
 
 driver.find_element_by_xpath('//*[@id="react-root"]/section/main/div/div/div/div/button').click()
 time.sleep(3)
+
+# 알림설정 팝업창 나중에 하기 클릭
+driver.find_element_by_xpath('/html/body/div[5]/div/div/div/div[3]/button[2]').click()
+time.sleep(4)
+
+# 검색 키워드로 크롤링을 하기 위해 검색어 입력
+key_word = input('키워드를 입력하세요 : ') 
+driver.find_element_by_xpath('//*[@id="react-root"]/section/nav/div[2]/div/div/div[2]/input').send_keys(key_word)
+time.sleep(4)
+
+# 첫번째 항목 접근
+driver.find_element_by_xpath('//*[@id="react-root"]/section/nav/ ... ').click()
+time.sleep(3)
+
+# 첫번째 포스팅 클릭
+driver.find_element_by_xpath('//*[@id="react-root"]/section/main/div/ ... ').click()
