@@ -13,3 +13,5 @@ declined, etc.
 - Copyright from `hesthers`, the user and owner of `h.esther` github page.
 - Do not release or leak any information. This is illegal action.
 - Do not violate any Internet or Digital law.
+
+If you find anything that is violated above rules, please leave the comments here or send me an email to let me know.
