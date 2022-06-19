@@ -236,3 +236,5 @@ plt.xticks(rotation=45)
 #plot_importance(param_grid_lgb.fit(X_train, y_train))
 
 print(best_param_lgb_gs.score(X_train, y_train))  #0.9552976739243179
+
+
