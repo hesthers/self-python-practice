@@ -1,5 +1,5 @@
 ## 2755 
-        tot_g = [i+i1 for i in ['A', 'B', 'C', 'D'] for i1 in ['+', '0', '-']]; tot_g.append('F')
+tot_g = [i+i1 for i in ['A', 'B', 'C', 'D'] for i1 in ['+', '0', '-']]; tot_g.append('F')
 g_dict = {k: float(i) for k, i in zip([i+'0' for i in ['A', 'B', 'C', 'D']], range(4, 0, -1))}
 gr_dict = {}
 for g in tot_g:
